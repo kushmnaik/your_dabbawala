@@ -1,0 +1,25 @@
+.SidebarOption{
+    display : flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    margin : auto;
+    width: 80%;
+}
+
+.SidebarOption > .MuiSvgIcon-root {
+    padding: 20px;
+}
+
+.SidebarOption:hover{
+    background-color : var(--app-bg-color);
+    border-radius: 30px;
+    color : var(--app-color);
+    transition: color 100ms ease-out;
+}
+
+
+.SidebarOption > h2{
+    margin-right: 20px;
+    font-size: 20px;
+}
