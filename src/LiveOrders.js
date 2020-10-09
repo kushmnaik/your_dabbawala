@@ -1,5 +1,6 @@
 import React from 'react'
-import './LiveOrders'
+import './LiveOrders.css'
+
 
 function LiveOrders() {
     return (

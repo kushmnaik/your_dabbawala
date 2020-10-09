@@ -16,7 +16,6 @@ function Sidebar() {
             <SidebarOption text="Contact Us" Icon={ContactSupportIcon}/>
 
             <button><h2>LogOut</h2></button>
-            
         </div>
     )
 }

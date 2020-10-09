@@ -1,8 +1,8 @@
 
 import './feed.css'
-import MenuItem from './MenuItem'
-// import {Avatar} from '@material-ui/core'
 
+// import {Avatar} from '@material-ui/core'
+import Menu from './Menu'
 import React, { Component } from 'react'
 import MealItem from './MealItem'
 
@@ -36,15 +36,15 @@ class Feed extends Component {
         <div className="feed">
             <div className ="feed_header">
                 <img alt="profile" src={require('./images/hi.jpg')} ></img>
-                <h1>Menu / Meal</h1>
+                <h3>Menu / Meal</h3>
             </div>
             <div className="option">
-                <button onClick={()=>this.changeToMenu()} >Menu </button>
-                <button onClick={()=>this.changeToMeal()} >Meal </button>
+                <button className="input" onClick={()=>this.changeToMenu()} >Menu </button>
+                <button className="input" onClick={()=>this.changeToMeal()} >Meal </button>
             </div>
             <div className="menus">
                 {
-                    this.state.which ? <MenuItem></MenuItem> : <MealItem></MealItem>
+                    this.state.which ? <Menu></Menu> : <MealItem></MealItem>
                 }                
             </div>
 

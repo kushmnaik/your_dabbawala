@@ -1,6 +1,6 @@
 body{
-  --app-bg-color : #faecc5;
-  --app-color : #FF8F00;
+  --app-bg-color : #fbedc5;
+  --app-color : #fd8f00;
 }
 
 .App{
@@ -10,4 +10,8 @@ body{
   margin-left: auto;
   margin-right: auto;
   padding : 0px 10px;
+}
+
+button.input{
+  cursor: pointer;
 }
