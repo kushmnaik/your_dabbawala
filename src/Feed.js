@@ -4,7 +4,7 @@ import './feed.css'
 // import {Avatar} from '@material-ui/core'
 import Menu from './Menu'
 import React, { Component } from 'react'
-import MealItem from './MealItem'
+import Meal from './Meal'
 
 class Feed extends Component {
     state = {
@@ -44,7 +44,7 @@ class Feed extends Component {
             </div>
             <div className="menus">
                 {
-                    this.state.which ? <Menu></Menu> : <MealItem></MealItem>
+                    this.state.which ? <Menu></Menu> : <Meal></Meal>
                 }                
             </div>
 

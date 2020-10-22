@@ -24,15 +24,7 @@ class Menu extends Component {
     
 
     async componentDidMount(){
-        try {
-            const res = await fetch('http://127.0.0.1:8000/api/'); // fetching the data from api, before the page loaded
-            const items = await res.json();
-            this.setState({
-              items
-            });
-          } catch (e) {
-            console.log(e);
-          }
+        this.reset()
     }
 
     onChange = e => {
@@ -48,8 +40,9 @@ class Menu extends Component {
             itemPrice : this.state.itemPrice,
             discription : this.state.discription,
             category :this.state.category,
+            restaurant : 2
         }
-        axios.post("http://127.0.0.1:8000/api/add", item).then(() => {
+        axios.post("http://127.0.0.1:8000/api/menu", item).then(() => {
             this.reset();
             this.resetfrom();
         });
@@ -66,7 +59,7 @@ class Menu extends Component {
     }
     async reset(){
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/add'); // fetching the data from api, before the page loaded
+            const res = await fetch('http://127.0.0.1:8000/api/menu/2'); // fetching the data from api, before the page loaded
             const items = await res.json();
             this.setState({
               items : items
@@ -84,6 +77,7 @@ class Menu extends Component {
                 <div className="AddMenu">
                     <span>Add new item :</span> 
                     <form onSubmit={this.createMenuItem}>
+                        
                         <input onChange={this.onChange} className="input" type="text" value={this.state.itemName}  name="itemName" placeholder="itemName" required></input>
                         <input onChange={this.onChange}  className="input" type="text" value={this.state.category} name="category" placeholder="category" required></input>
                         
@@ -97,7 +91,8 @@ class Menu extends Component {
                 <table className="Table">
                     <thead>
                     <tr className="table_head" >
-                        <td><input className="input" onChange = {this.onChange} name="SearchItem" value={this.state.SearchItem} type="text" placeholder="SearchItem" style={{"backgroundColor":"white","margin-left":"3px"}}></input></td>
+                        
+                        <td><input className="input" onChange = {this.onChange} name="SearchItem" value={this.state.SearchItem} type="text" placeholder="&#x1F50D;SearchItem" style={{"backgroundColor":"white","marginLeft":"3px"}}></input></td>
                         <td>Category</td>
                         <td>Price</td>
                         <td></td>
@@ -106,7 +101,7 @@ class Menu extends Component {
                     </thead>
                     <tbody>
                     {
-                        this.state.items.filter(item => item.itemName.includes(this.state.SearchItem)).map(item => (
+                        this.state.items.filter(item => item.itemName.toLowerCase().includes(this.state.SearchItem.toLowerCase())).sort((a,b)=>a.category > b.category ? 1 : -1).map(item => (
                             <MenuItem key={item.id}
                                 id = {item.id}
                                 itemName ={item.itemName}

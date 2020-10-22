@@ -1,7 +1,7 @@
 .feed {
     flex : 0.5;
     border-right : 1px solid var(--app-color);
-    min-width : 760px;
+    min-width : 710px;
     padding: 5px 5px ;
     display : block;
     overflow-y: scroll;
@@ -9,7 +9,7 @@
 
 .feed_header > img{
     border-radius: 100%;
-    margin : 2px 2px;
+    margin : 10px 2px;
     height : 40px !important;
     width : 40px !important;
     
