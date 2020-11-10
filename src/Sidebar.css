@@ -3,6 +3,10 @@ img{
     margin : 20px;
 }
 
+Link{
+    text-decoration: none;
+}
+
 .Sidebar{
     border-right : 1px solid var(--app-color);
     
@@ -13,7 +17,7 @@ img{
     align-items: center;
 }
 
-.Sidebar > button{
+.Sidebar  button{
     display: block;
     width: 90%;
     font-family: 'Times New Roman', Times, serif;
@@ -27,9 +31,12 @@ img{
 
 }
 
-.Sidebar>button:hover{
-    background-color : var(--app-bg-color);
-    border-radius: 30px;
-    color : var(--app-color);
-    transition: color 100ms ease-out;
+
+.Sidebar button:hover{
+    background-color : var(--app-color) !important;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 30px !important;
+    color : white !important;
+    transition: color 100ms ease-out !important;
+    cursor: pointer;
 }

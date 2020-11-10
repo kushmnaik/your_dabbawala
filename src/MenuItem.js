@@ -11,7 +11,7 @@ import axios from 'axios'
              itemPrice : this.props.itemPrice,
              category : this.props.category,
              discription : this.props.discription,
-             restaurant : 2,
+             restaurant : localStorage.getItem('username'),
              color : "green",
         }
     }

@@ -5,6 +5,7 @@ import './feed.css'
 import Menu from './Menu'
 import React, { Component } from 'react'
 import Meal from './Meal'
+import { Redirect } from 'react-router-dom'
 
 class Feed extends Component {
     state = {
@@ -14,10 +15,11 @@ class Feed extends Component {
         super(props)
     
         this.state = {
-            which : true
+            which : true,
+            login : true,
         }
     }
-
+    
     
     changeToMenu = () =>{
         this.setState({
@@ -32,6 +34,7 @@ class Feed extends Component {
         console.log(this.state.which)
     }
     render() {
+        if(this.props.login){
         return (
         <div className="feed">
             <div className ="feed_header">
@@ -44,12 +47,16 @@ class Feed extends Component {
             </div>
             <div className="menus">
                 {
-                    this.state.which ? <Menu></Menu> : <Meal></Meal>
+                    this.state.which ? <Menu username = {this.props.username}></Menu> : <Meal username = {this.props.username}></Meal>
                 }                
             </div>
 
         </div>
         )
+            }
+        else{
+            return <Redirect to='/Login'></Redirect>
+        }
     }
 }
 

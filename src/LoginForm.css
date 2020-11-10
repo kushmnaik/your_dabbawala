@@ -1,0 +1,33 @@
+.LoginForm>form>.input{
+    display: block;
+    width: 100%;
+    background: var(--app-bg-color);
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #666666;
+    box-shadow: 0 0 black;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0px 30px;
+    margin-top: 20px;
+    border: none;
+    outline : none;
+}
+.LoginForm  .sub {
+    color: white;
+}
+.LoginForm{
+    align-items: center;
+    margin: 10px 100px;
+}
+
+.LoginForm h4{
+   
+   
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    height : 50px;
+}
+

@@ -40,9 +40,9 @@ class Meal extends Component {
             itemPrice : this.state.itemPrice,
             discription : this.state.discription,
             day :this.state.day,
-            restaurant : 2
+            restaurant : localStorage.getItem('username')
         }
-        axios.post("http://127.0.0.1:8000/api/meal/"+2, item).then(() => {
+        axios.post("http://127.0.0.1:8000/api/meal/2", item).then(() => {
             this.reset();
             this.resetfrom();
         });
@@ -59,12 +59,12 @@ class Meal extends Component {
     }
     async reset(){
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/meal/'+2); // fetching the data from api, before the page loaded
+            const res = await fetch('http://127.0.0.1:8000/api/meal/'+localStorage.getItem('username')); // fetching the data from api, before the page loaded
             const items = await res.json();
             this.setState({
               items : items
             });
-            console.log(items)
+           
           } catch (e) {
             console.log(e);
           }

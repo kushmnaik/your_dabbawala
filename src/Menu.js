@@ -40,9 +40,10 @@ class Menu extends Component {
             itemPrice : this.state.itemPrice,
             discription : this.state.discription,
             category :this.state.category,
-            restaurant : 2
+            restaurant : localStorage.getItem('username')
         }
-        axios.post("http://127.0.0.1:8000/api/menu", item).then(() => {
+        console.log(item)
+        axios.post("http://127.0.0.1:8000/api/menu/"+localStorage.getItem('username'), item).then(() => {
             this.reset();
             this.resetfrom();
         });
@@ -59,12 +60,12 @@ class Menu extends Component {
     }
     async reset(){
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/menu/2'); // fetching the data from api, before the page loaded
+            const res = await fetch('http://127.0.0.1:8000/api/menu/'+localStorage.getItem('username')); // fetching the data from api, before the page loaded
             const items = await res.json();
             this.setState({
               items : items
             });
-            console.log(items)
+            // console.log(this.props.username)
           } catch (e) {
             console.log(e);
           }

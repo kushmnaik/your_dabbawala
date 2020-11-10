@@ -4,6 +4,14 @@ body{
   /* background-color: rgb(49, 47, 47); */
 }
 
+button :hover{
+    cursor: pointer;
+}
+
+Link{
+  text-decoration: none;
+}
+
 .App{
   display : flex;
   height:100vh;

@@ -10,7 +10,7 @@ import axios from 'axios'
              itemName : this.props.itemName,
              day : this.props.day,
              discription : this.props.discription,
-             restaurant : 2,
+             restaurant : localStorage.getItem('username'),
              color : "green",
         }
     }

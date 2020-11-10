@@ -38,17 +38,18 @@ tbody>tr:hover{
 }
 
 .table_head>td{
-    width : 22%;
+    width : 26%;
+    text-align: left;
 }
 
 .input{
-    font-family: 'Times New Roman', Times, serif;
-    line-height: 1.5;
-    background-color: inherit;
-    border-radius: 25px;
-    font-size: 15px;
-    padding-left: 10px;
-    border: none;
+    font-family: 'Times New Roman', Times, serif !important;
+    line-height: 1.5 !important;
+    background-color: inherit ;
+    border-radius: 25px !important;
+    font-size: 15px !important;
+    padding-left: 10px !important;
+    border: none !important;
 }
 .AddMenu{
     padding: 10px;

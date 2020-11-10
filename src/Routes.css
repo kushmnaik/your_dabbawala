@@ -1,0 +1,18 @@
+body{
+    --app-bg-color : rgb(250, 238, 197);
+    --app-color : rgb(255, 145, 0);
+    /* background-color: rgb(49, 47, 47); */
+  }
+  
+  .Routes{
+    display : flex;
+    height:100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding : 0px 10px;
+  }
+  
+  button.input{
+    cursor: pointer;
+  }
